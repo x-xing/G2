@@ -1,0 +1,3 @@
+function out = SpeedMB(v,k,T,m)
+vp=sqrt(2*k*T/m);
+out=v.^2.*exp(-m*v.^2/2/k/T)-vp.^2/2/exp(1);

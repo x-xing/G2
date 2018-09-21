@@ -1,0 +1,5 @@
+function out = g2trifit(x,t,n)
+
+
+out = sum((y-n).^2)+(sign(x(3))-1).^2*length(t).^2;
+

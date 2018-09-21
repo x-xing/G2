@@ -1,0 +1,12 @@
+data = load  ('D:\xing\My Dropbox\Data\Coincidence\G2 data combined 1-9, 04-23-2011.txt');
+
+data = data/1000;
+
+for ind = 1:4
+    subplot(2,2,ind);
+    time = -55:5*ind:55;
+    hist(data,time);
+    xlabel('Arrival time difference /ns');
+    ylabel('Number of counts');
+end
+

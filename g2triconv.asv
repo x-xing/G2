@@ -1,0 +1,10 @@
+function out = g2triconv(x,t)
+lim = max(t)+20;
+t1=-lim:0.1:lim;
+y1= -x(1)*exp(-abs(t1)/x(2))+1;
+
+%convolution with a 10ns coincidence window.
+y2 = conv(y1,ones(1,400)/400);
+%sample every step(t) to recover the y value.
+ind = linspace(length(y2)/2,length(y2)-100,length(t));
+out = y2(round(ind));

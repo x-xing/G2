@@ -1,0 +1,16 @@
+A = load('F:\My Dropbox\MatlabCode\YasiCode\QWP45HWP24deg.txt');
+
+theta = A(:,1);
+yOrig = A(:,2);
+yOrig = yOrig/mean(yOrig)*.5;
+
+plot(theta,yOrig,'ob');
+hold on;
+
+start = [pi, pi/2, pi/4];
+options=optimset('Display','final','MaxFunEvals', 1000, 'MaxIter',1000); 
+
+par = fminsearch(@wpfit_func, start, options, theta, yOrig);
+plot(theta, GWP(par(1),theta,1).*GWP(par(2),par(3),1) + GWP(par(1),theta,2).*GWP(par(2),par(3),3), 'r','linewidth', 2);
+
+disp('

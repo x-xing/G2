@@ -1,0 +1,10 @@
+A = load('D:\xing\My Dropbox\Data\Coincidence\laser unlocked, with rb, 114mA 2;14;20, 9-8-2010_forMatlab.txt');
+find(
+data = mean(A);
+errors = sqrt(var(A));
+msg=sprintf('\nsingels A: %3.2f +/- %3.2f', data(1),errors(1));
+disp(msg);
+msg=sprintf('singels B: %3.2f +/- %3.2f', data(2),errors(2));
+disp(msg);
+msg=sprintf('coin AB: %3.2f +/- %3.2f', data(3),errors(3));
+disp(msg);
